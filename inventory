@@ -1,0 +1,8 @@
+[dev]
+server_host_or_IP
+
+[prod]
+server_host_or_IP
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
