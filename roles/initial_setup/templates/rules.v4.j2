@@ -1,0 +1,61 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m comment --comment "Block unwanted IP"
+-A INPUT -s 51.255.192.101/32 -j DROP
+-A INPUT -s 167.99.248.254/32 -j DROP
+-A INPUT -s 195.123.220.193/32 -j DROP
+-A INPUT -s 37.59.44.193/32 -j DROP
+-A INPUT -s 94.130.165.87/32 -j DROP
+-A INPUT -s 193.33.87.220/32 -j DROP
+-A INPUT -s 139.99.50.255/32 -j DROP
+-A INPUT -s 37.59.55.60/32 -j DROP
+-A INPUT -s 37.59.43.131/32 -j DROP
+-A INPUT -s 138.197.4.230/32 -j DROP
+-A INPUT -s 92.63.99.17/32 -j DROP
+-A INPUT -s 45.89.230.240/32 -j DROP
+-A INPUT -s 91.215.169.111/32 -j DROP
+-A INPUT -s 193.33.87.219/32 -j DROP
+-A INPUT -s 91.215.169.111/32 -j DROP
+-A INPUT -m comment --comment "Global Rules"
+-A INPUT -f -j DROP
+-A INPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j DROP
+-A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,PSH,ACK,URG -j DROP
+-A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP
+-A INPUT -m state --state INVALID -j DROP
+-A INPUT -p tcp -m tcp --dport 25 --tcp-flags FIN,SYN,RST,ACK SYN -m connlimit --connlimit-above 50 --connlimit-mask 32 --connlimit-saddr -j DROP
+-A INPUT -p icmp -m icmp --icmp-type 0 -j ACCEPT
+-A INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
+-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+-A INPUT -p icmp -m icmp --icmp-type 11 -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -m comment --comment "Public access Rules"
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 8889 -j ACCEPT
+-A INPUT -m comment --comment "Access Client"
+-A INPUT -s 91.162.215.95/32 -p tcp -m multiport --dports 22,3306,8983,8080 -j ACCEPT
+-A INPUT -s 98.195.70.177/32 -p tcp -m multiport --dports 22,3306,8983,8080 -j ACCEPT
+-A INPUT -s 82.223.21.118/32 -p tcp -m multiport --dports 22,3306,8983,8080 -j ACCEPT
+-A INPUT -s 176.169.28.121/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
+-A INPUT -s 98.195.70.61/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
+-A INPUT -s 176.130.232.230/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
+-A INPUT -s 176.132.110.245/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
+-A INPUT -m comment --comment "Dutiko : Admin & Monitoring"
+-A INPUT -s 176.31.89.162/32 -p icmp -m icmp --icmp-type 8 -j ACCEPT
+-A INPUT -s 62.210.45.142/32 -p icmp -m icmp --icmp-type 8 -j ACCEPT
+-A INPUT -s 176.31.89.162/32 -p tcp -m multiport --dport 21:22,5666,49152:49252 -j ACCEPT
+-A INPUT -s 176.31.89.162/32 -p udp -m udp --dport 161 -j ACCEPT
+-A INPUT -s 62.210.45.133/32 -p tcp -m multiport --dport 22,9102 -j ACCEPT
+-A INPUT -s 176.31.89.164/32 -p tcp -m multiport --dport 21:22,10000,49152:49252 -j ACCEPT
+-A INPUT -s 176.31.89.173/32 -p tcp -m multiport --dport 21:22,49152:49252 -j ACCEPT
+-A INPUT -s 217.109.151.1/32 -p tcp -m tcp --dport 10000 -j ACCEPT
+-A OUTPUT -o lo -j ACCEPT
+-A OUTPUT -p icmp -j ACCEPT
+-A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A OUTPUT -p tcp -m multiport --dports 25,80,443 -j ACCEPT
+-A OUTPUT -p udp -m multiport --dports 53,123 -j ACCEPT
+-A OUTPUT -d 145.239.140.41/32 -p tcp -m tcp --dport 9103 -m comment --comment "Backup filer6" -j ACCEPT
+COMMIT
+

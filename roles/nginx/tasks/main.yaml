@@ -5,14 +5,23 @@
     state: latest
     update_cache: yes
 
-- name: Allow access on port 80
-  ufw:
-    rule: allow
-    port: '80'
-    proto: tcp
+- name: Remove default file inside sites-available
+  file:
+    path: /etc/nginx/sites-available/default
+    state: absent
 
-- name: Set Up Nginx default site
+- name: Setting Up Nginx Collecte API default site
   template:
-    src: nginx.conf.j2
-    dest: /etc/nginx/sites-available/default
+    src: collecte-api.conf.j2
+    dest: /etc/nginx/sites-enabled/collecte-api
+
+- name: Setting Up Nginx Console site
+  template:
+    src: console.conf.j2
+    dest: /etc/nginx/sites-available/consoleadmin
+
+- name: Setting Up Nginx Search site
+  template:
+    src: console.conf.j2
+    dest: /etc/nginx/sites-available/search
   notify: restart nginx

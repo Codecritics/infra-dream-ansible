@@ -1,2 +1,2 @@
 ---
-install_packages: [ "php-curl", "php-mysql" ]
+install_packages: [ "php-curl", "php-mysql", "php-zip" ]

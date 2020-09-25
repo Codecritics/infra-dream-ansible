@@ -1,0 +1,15 @@
+- roles:
+    - { role: initial_setup, tags: setup }
+    - { role: php, tags: php }
+    - { role: composer, tags: php }
+    - { role: mysql, tags: database }
+
+  hosts:
+    - dev
+  user: root
+  vars:
+    users_root:
+      - marius
+      - prachi
+      - rishav
+      - subbhash

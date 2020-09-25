@@ -1,0 +1,35 @@
+---
+
+- name: prevent the iptables-peristent install dialog
+  debconf: name=iptables-persistent question={{ item }} vtype=boolean value=true
+  with_items:
+    - iptables-persistent/autosave_v4
+    - iptables-persistent/autosave_v6
+
+- name: install iptables-persitant package
+  apt: name={{ item }} state=present
+  with_items:
+    - iptables-persistent
+    - netfilter-persistent
+    - apt-transport-https
+
+- name: make sure /etc/iptables folder exist
+  file: dest=/etc/iptables state=directory
+
+- name: create iptables (rules.v4)
+  template:
+    src=rules.v4.j2
+    dest=/etc/iptables/rules.v4
+    backup=yes
+  tags: config
+
+- name: create iptables (rules.v6)
+  template:
+    src=rules.v6.j2
+    dest=/etc/iptables/rules.v6
+    backup=yes
+  tags: config
+
+- name: netfilter-persistent
+  action: service name=netfilter-persistent state=restarted
+

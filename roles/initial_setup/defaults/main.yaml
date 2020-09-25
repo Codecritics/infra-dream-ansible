@@ -1,3 +1,2 @@
 ---
-setup_user: sammy
 sys_packages: [ "vim", "git", "unzip", "supervisor" ]

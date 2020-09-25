@@ -1,0 +1,14 @@
+- name: create ssh directory
+  file: path=/root/.ssh state=directory mode=0700
+
+- name: write authorized keys
+  action: template src='{{ role_path }}/templates/authorized_keys.j2' dest='/root/.ssh/authorized_keys' mode=0600 group=root owner=root backup=yes
+
+- name: check if autorhized_keys is present
+  stat: path=/root/.ssh/authorized_keys
+  register: sym
+
+- name: delete symlink
+  file: path=/root/.ssh/authorized_keys state=absent
+  when: sym.stat.islnk is defined and sym.stat.islnk
+
