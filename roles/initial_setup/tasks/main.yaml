@@ -5,3 +5,8 @@
 - name: Configure Iptables
   include:
     iptables.yaml
+
+- name: Create Folder for the apps
+  file:
+    path: /opt/apps
+    state: directory

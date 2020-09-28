@@ -1,8 +1,10 @@
-[dev]
-# 217.160.173.76
-138.68.98.200
+current_dev ansible_host=dev.wdream.fr
+new_dev ansible_host=207.154.231.23
 
-[prod]
+[current-prod]
+server_host_or_IP
+
+[new-prod]
 server_host_or_IP
 
 [all:vars]

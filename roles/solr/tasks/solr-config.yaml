@@ -1,0 +1,41 @@
+---
+
+- name: Download Solr Version
+  get_url:
+    url: "https://archive.apache.org/dist/lucene/solr/{{ solr_version }}/solr-{{ solr_version }}.zip"
+    dest: /opt
+
+- name: Unzip Solr Zip
+  unarchive:
+    src: "/opt/solr-{{ solr_version }}.zip"
+    dest: /opt
+    remote_src: yes
+
+- name: Copy the jar configuration files
+  copy:
+    src: "{{ role_path }}/files/dist"
+    dest: "/opt/solr-{{ solr_version }}/dist"
+
+- name: Copy the cores configuration
+  copy:
+    src: "{{ role_path }}/files/cores/"
+    dest: "/opt/solr-{{ solr_version }}/server/solr/"
+  tags: "solr-config"
+
+- name: Create data-config-sql for dream360 Application
+  template:
+    src: templates/dream360-data-config-sql.xml.j2
+    dest: "/opt/solr-{{ solr_version }}/server/solr/dream360/conf/data-config-sql.xml"
+  tags: "solr-config"
+
+- name: Create data-config-sql for dreamcore Application
+  template:
+    src: templates/dreamcore-data-config-sql.xml.j2
+    dest: "/opt/solr-{{ solr_version }}/server/solr/dreamcore/conf/data-config-sql.xml"
+  tags: "solr-config"
+
+- name: Start Solr Server
+  shell: "./bin/solr start -p {{ solr_port }} -force"
+  args:
+    chdir: "/opt/solr-{{ solr_version }}"
+  tags: "solr-config"

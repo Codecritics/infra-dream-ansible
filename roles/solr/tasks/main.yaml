@@ -1,0 +1,9 @@
+---
+- name: Install Java 8
+  include: java.yaml
+  become: yes
+
+- name: Configure Solr
+  include:
+    solr-config.yaml
+  become: yes

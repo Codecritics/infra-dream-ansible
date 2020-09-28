@@ -1,10 +1,10 @@
 ---
-mysql_database: todo_app
-mysql_user: todo_user
-mysql_pass: YOUR_MYSQL_PASSWORD
+mysql_database: wdream
+mysql_user: dream
+mysql_pass: dreamuser123
 
 setup_user: dream
 
-search_project_name: "/var/www/wdream"
-console_project_name: "/var/www/crawlerapi"
-collecte_project_name: "/var/www/consoleadmin"
+search_project_path: "/opt/apps/wdream"
+console_project_path: "/opt/apps/crawlerapi"
+collecte_project_path: "/opt/apps/consoleadmin"

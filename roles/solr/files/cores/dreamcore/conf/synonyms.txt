@@ -1,0 +1,496 @@
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#-----------------------------------------------------------------------
+#some test synonym mappings unlikely to appear in real input text
+aaafoo => aaabar
+bbbfoo => bbbfoo bbbbar
+cccfoo => cccbar cccbaz
+fooaaa,baraaa,bazaaa
+
+# Some synonym groups specific to this example
+GB,gib,gigabyte,gigabytes
+MB,mib,megabyte,megabytes
+Television, Televisions, TV, TVs
+absentéisme, absentéisme, arrêt maladie, sick leave
+accéder facilement, accéder facilement, accéder rapidement, fast access, easy access
+accès crédit, accès crédit, affacturage, alternatives financement, factoring, financing alternatives, access credit
+accord amiable, accord amiable, accord transactionnel, settlement agreement, amicable agreement
+accueil public, accueil public, accueil usager, public reception, Home user
+accueil touristique, offre touristique, accueil touristique, hébergement touristique, auberge, auberge jeunesse, chambre hôte, gîte rural, gîte touristique, capacités hébergement, forfait résidentiel, accommodation possibilities, residential package, tourist experience, tourist accommodation, Hostel, Youth hostel, guestroom, cottage, Bed and breakfast, Tourist offer
+acquisition entreprise, acquisition entreprise, achat entreprise, Business Acquisition, company purchase
+acte médical, acte médical, consultation médicale, medical consultation, medical procedure
+actif circulant, actif circulant, current assets
+action commerciale, action commerciale, animation commerciale, campagne appel, business development, commercial animation, call campaign, commercial action
+action publique, action publique, action sociale, Social Action, public action
+activité artistique, activité artistique, art contemporain, art dramatique, art plastique, art populaire, métier art, peinture, sculpture, oeuvre art, vie culturelle, artwork, Cultural life, Contemporary art, Dramatic Arts, plastic Art, Folk art, art craft, painting, sculpture, artistic activity
+activité plein air, base loisirs, leisure centre, outdoor activity
+adaptabilité, adaptation emploi, adaptation employment, adaptability
+additif alimentaire, édulcorant synthèse, artificial sweetener, food additive
+agencement intérieur, agencement intérieur, architecture intérieur, installation sanitaire, jacuzzi, health facility, interior architecture, interior design
+agent commercial, agent commercial, représentant commercial, bureau représentation, revendeur, representative office, dealer, commercial agent, commercial representative
+agriculture, agriculture, exploitation agricole, poduit agricole, production agricole, production végétale, agricultural exploitation, agricultural poduit, agricultural production, vegetable production
+agroalimentaire, agroalimentaire, denrée alimentaire, produit agroalimentaire, food, food product
+allergologie, allergologie, antiallergique, Hypo-allergenic, Allergology
+amélioration processus, amélioration processus, amélioration continue, amélioration qualité, continuous improvement, quality improvement, process improvement
+améliorer réputation, améliorer réputation, amélioration réputation, improve reputation, improving reputation
+analyse biologique, analyse biologique, analyse microbiologique, microbiological analysis, bioassay
+analyse coût, analyse valeur, analyse coût, cost analysis, Value Analysis
+analyse économique, analyse économique, analyse financière, financial analysis, economic analysis
+animation culturelle, exposition itinérante, exposition permanente, maison culture, culture House, traveling exhibition, permanent exhibition, cultural activities
+antalgique, anti-inflammatoire, analgesic, Anti-inflammatory
+anticiper difficulté, anticiper risque, anticipate risk, anticipate difficulty
+aoc, aoc, appellation origine, designation origin
+application informatique, erp, soa, organisation données, Data organization, computer application
+approvisionnement, approvisionnement, procurement
+aquaculture, aquaculture, pisciculture, fish farming
+artisanat, entreprise artisanale, Industrie artisanale, craft business, cottage industry, craft
+assistance technique, assistance technique, fournir support technique, assistance technique téléphone, assistance téléphonique, dépannage distance, maintenance téléphonique, télémaintenance, diagnostic moteur, hotline, maintenance, maintenance corrective, maintenance curative, maintenance engineering, maintenance étendue, maintenance évolutive, maintenance lourde, maintenance moteur, maintenance préventive, maintenance réparation composant, maintenance service, maintenance solution, maintenance support, on-site assistance, on-site support, service maintenance réparation, support technique, test technique profondeur, vérification technique, telephone technical support, helpline, remote troubleshooting, telephone service, remote maintenance, engine monitoring, hotline, maintenance, corrective maintenance, corrective maintenance, engineering Maintenance, extensive maintenance, evolutionary maintenance, heavy maintenance, engine maintenance, preventive maintenance, component maintenance repair, Maintenance Service, Maintenance solution, Maintenance Support, on-site assistance, On-Site Support, maintenance repair service, technical support, in-depth technical monitoring, technical audit, engineering assistance, provides technical support
+atelier production, chaînes production, production chains, production workshop
+attente client, attente client, attente consommateur, attente marché, Consumer expectation, market expectations, customer expectation
+attitude personnel, attitude personnel, comportement inaceptable, leadership, unacceptable behaviour, leadership, staff attitude
+audit, diagnostic gestion, Diagnostic management
+authentification informatique, authentification informatique, authentification unique, SSO, computer authentication
+autorité politique, commission européenne, gouvernement, ministre, European Commission, government, minister, political authority
+balance courante, balance commerciale, balance courante, balance paiements, current account, balance payments, trade balance
+bateau, navire, ship, boat
+bateau pêche, bateau pêche, chalutier, navire pêche, fishing boat, trawler, fishing vessel
+besoin assistance, besoin assistance, demande assistance, request assistance, need help
+besoin formation, besoin formation, comment améliorer, how improve, need training
+besoin nutritionnel, besoin nutritionnel, besoin alimentaire, équilibre alimentaire, balanced diet, food need, nutritional need
+bétail, bétail, bovin, cheptel, cattle, livestock
+bicyclette, bicyclette, cyclotourisme, vtt, cycling, mountain bike, bicycle
+bilan financier, bilan financier, bilan comptable, structure bilancielle, balance sheet, balance sheet structure
+biodiversité, biodiversité, diversité biologique, forme vie, biodiversity, biological diversity, Life form
+biologie, biologiste, biologist
+boisson alcoolisée, boisson alcoolisée, spiritueux, liquor, alcoholic drink
+boîtes noires, boîtes noires, cockpit voice recorder, CVR, black boxes, Cockpit Voice Recorder, CVR
+bonnes pratiques, bonnes pratiques, best practices, bon réflexe, good reflex, good practices, best practices
+budget, budget forecast, budget etat, state budget, forecast budget 
+budget local, budget local, budget municipal, budget régional, budget collectivités locales, budget communal, budget départemental, municipal budget, regional budget, local budget, departmental budget
+bureau étude, bureau étude, bureau méthodes, centres recherche, office methods, research centers, design office
+cabinet conseil, société conseil, cabinet audit, cabinet étude, conseil logistique, conseil management, conseil marketing, conseil ressources humaines, conseil stratégie, audit firm, research firm, logistics consulting, management consulting, marketing consultancy, human resources consulting, strategy consulting, consulting firm, consulting company
+cabinet recrutement, cabinet recrutement, chasseur tête, Headhunter, recruiting firm
+cadeau affaires, cadeau publicitaire, cadeau affaires, Gift Business, giveaway
+calcul haute performance, calcul haute performance, compression données, data compression, High Performance Computing
+campagne communication, campagne communication, campagne information, campagne publicitaire, campagne publicité, Information campaign, advertising campaign, communication campaign
+cancérologie, cancérologie, chimiothérapie, chemotherapy, Cancer
+cao, conception assistée ordinateur, conception fabrication assistée ordinateur, conception industrielle, industrial design, design computer aided manufacturing, Computer Aided Design
+capacité financement, capacité financement, capacité autofinancement, cash flow, financing capacity
+capacité innover, capacité innover, encouragement initiative, force proposition, Force proposal, encouraging initiative, ability innovate
+capital investissement, capital investissement, capital développement, capital amorçage, capital démarrage, capital development, seed capital, startup capital, capital investment
+capitalisation, capitalisation, capital départ, capital social, capitalisation boursière, starting capital, share capital, market capitalization, capitalization
+carburant alternatif, carburant alternatif, biodiesel, alternative fuel
+carte accès bord, carte accès bord, carte embarquement, boarding pass
+centrale achat, groupement achat, buying group, central purchasing
+centre appel, centre appel, call center
+centre commercial, centre commercial, galerie marchande, shopping mall
+centre congrès, centre congrès, centre convention, convention center
+centre culturel, centre culturel, centre socio culturel, socio-cultural center, cultural Center
+centre formation, centre formation, centre pédagogique, training center, education center
+centre logistique, logistic center
+centre touristique, centre touristique, centre vacance, resort, holiday center, resort, Tourist center
+certificat opérateur aérien, certificat opérateur aérien, certificat transporteur aérien, Air Operator Certificate, Air Carrier Certificate
+chaine logistique, chaine logistique, chaine approvisionnement, circuit court, gestion stocks, short Circuit, inventory management, supply chain
+charcuterie, charcuterie, charcutier, traiteur, delicatessen, pork butcher, caterer
+charge utile, charge utile, charge marchande, fret, freight, payload
+chemin fer, chemin fer, compagnie ferroviaire, ferroutage, réseau ferroviaire, voie ferrée, railway company, piggyback, railway network, railway
+chiffre affaire, chiffre affaire, augmentation chiffre affaires, increase in turnover, turnover
+chirurgie, chirurgie, chirurgie ambulatoire, chirurgie dentaire, chirurgie générale, neurochirurgie, opération chirurgicale, opération chirurgie, ambulatory surgery, dental surgery, general surgery, neurosurgery, surgery
+cible marketing, cible marketing, cible potentielle, potential target, target marketing
+circuit distribution, circuit distribution, circuit commercial, circuit vente, distribution channel, commercial circuit, sales channel
+circulation aérienne, circulation aérienne, navigation aérienne, ciel unique européen, espace aérien, espace aérien contrôlé, mouvement avion, trafic point point, voie aérienne, vol direct, vol domestique, vol international, vol long-courrier, vol régulier, vol retardé, ETOPS, heure estimée arrivée vol, Plan vol, temps avion sol, ETOPS, Estimated flight arrival time, Flight plan, aircraft groundtime, Single European Sky, regular flight, delayed flight, Airspace, controlled airspace, aircraft movement, point to point traffic, Airway, Direct flight, domestic flight, international flight, Long Flight, air traffic, Air Navigation
+climat économique, climat économique, climat affaire, economic climate, climate deal
+coefficient remplissage, coefficient remplissage, coefficient occupation, filling coefficient, occupation coefficient
+cohésion interne, cohésion interne, adhésion équipe, adhésion collaborateur, employees involvement, internal cohesion, team membership
+collecte déchets, collecte déchets, collecte sélective, collection, waste collection
+collectivités territoriales, collectivités territoriales, communauté urbaine, municipalité, Urban community, Municipality, local authorities
+comité de direction, comité de direction, comité exécutif, comité financier, conseil administration, financial committee, board directors, Board Managing Directors, executive committee
+communication externe, communication externe, conférence presse, press conference, external communication
+compétence, compétence, bilan compétences, skills assessment, skill
+comportement alimentaire, comportement alimentaire, complément vitaminique, vitamin supplements, eating
+comportement éthique, comportement éthique, action éthique, achats responsables, responsible purchasing, ethical action, ethical behaviour
+composant avion, composant avion, fuselage, fuselage, aircraft component
+composant électronique, composant électronique, carte contrôle, circuit imprimé, circuit intégré, condensateur, connecteur usb, connectique, electrovanne, régulateur tension, Control Card, printed circuit board, integrated circuit, capacitor, usb connector, connectors, solenoid, Voltage Regulator, electronic component
+composant hydrolique, composant hydrolique, circuit hydrolique, hydraulic circuit, hydraulic component
+comptabilité, comptabilité entreprise, comptabilité industrielle, comptabilité analytique, industrial accounting, cost accounting, business accounting
+compte public, compte public, comptabilité nationale, comptabilité publique, public account, national accounts, public accounting
+compte résultats, compte résultats, excédent brut exploitation, EBITDA, income statement
+configuration informatique, configuration informatique, client-serveur, client server, computer configuration
+conseil informatique, conseil informatique, ssii, IT consulting
+construction navale, construction navale, chantier naval, ship building, ship yard
+content management, content management, gestionnaire fichier, lecture automatique documents, reconnaissance images, text mining, traitement image, traitement numérique,métadonnée, metadata, File Manager, Automatic Document, image recognition, text mining, image processing, digital processing, content management
+contentieux, contentieux, action groupe, Action Group, litigation
+contrôle aérien, contrôle aérien, contrôleur aérien, Air Controller, air traffic control
+contrôle fabrication, contrôle fabrication, contrôle qualité, Quality Control, production control
+contrôle gestion, contrôle gestion, contrôle budgétaire, contrôle financier, management control, budget Control, financial control
+contrôle médical, contrôle médical, analyse médicale, analyse sang, bilan santé, dépistage prénatal, échographie, dépistage sanitaire, électrocardiogramme, électroencéphalogramme, suivi médical, table examen, medical check up, medical analysis, blood test, checkup, prenatal screening, Sonography, health screening, electrocardiogram, electroencephalogram, medical monitoring, Examination table
+cours bourse, cours bourse, cours action, chute cours, stock prices, share price, falling prices
+coût défaillance, coût défaillance, coût indisponibilité, cost failure, cost downtime
+coût exploitation, coût exploitation, frais fonctionnement, operating cost
+coût fabrication, coût fabrication, coût production, coût revient, prix revient, coût main œuvre, production cost, cost, cost price, cost labor
+création artistique, création artistique, création littéraire, création musicale, création théâtrale, courant artistique, artistic creation, creative Writing, music creation, theatrical creation, Artistic current
+création audiovisuelle, création audiovisuelle, création cinématographique, audiovisual creation, filmmaking
+création multimédia, création multimédia, infographiste, multimedia creation, Infographiste
+crise confiance, crise confiance, déficit confiance, crisis confidence, trust deficit
+curriculum vitae, Curriculum vitae, CV, recherche emploi, cv, job search
+cybersécurité, cybersécurité, firewall, pare feu, cyberattaque, virus informatiques, cybersecurity, firewall, cyberattack, computer viruses
+décoration intérieure, décoration intérieure, objet ameublement, parquet, Interior decoration, object furniture
+déficit budgétaire, déficit budgétaire, impasse budgétaire, budget deficit, budget impasse
+démarche qualité, démarche qualité, analyse qualitative, assurance qualité, avec grand soin, gestion qualité, plan qualité, qualité production, qualité totale, qualité travail, test conformité, traçabilité, vérification approfondie, zéro défaut, augmenter chance réussite, quality approach, qualitative analysis, quality assurance, with extreme care, quality management, quality plan, production quality, Total quality, quality work, compliance test, traceability, thorough check, zero default, increase chances success
+dentisterie, prothèse dentaire, Dentistry, Dental prosthesis
+département achat, département achat, service achat, purchasing department, Purchase Service
+dépollution, dépollution, décontamination, cleanup, decontamination
+dépôt bilan, dépôt bilan, faillite, liquidation biens, liquidation judiciaire, cessation activité, cessation paiement, faillite frauduleuse, règlement judiciaire, bankruptcy filing, bankruptcy, liquidation assets, liquidation, cessation trading, cease payment, fraudulent bankruptcy, judicial settlement
+désinfectant, désinfectant, appareil désinfection, disinfectant, disinfection system
+détergent, détergent, détachant, lessive, detergent, stain remover, Laundry detergent
+dette extérieure, dette extérieure, endettement extérieur, foreign debt, external debt
+dette intérieure, dette intérieure, dette nationale, dette publique, domestic debt, national debt, public debt
+développement commercial, développement commercial, diffusion commerciale, Commercial Development, commercial distribution
+croissance durable, croissance verte, écologie, économie verte, sustainable development, développement durable,sustainable growth, green growth, ecology, green economy
+développement international, développement international, capacité exportation, international Development, export capacity
+développement logiciel, développement logiciel, analyse fonctionnelle, analyse organique, architecture informatique, atelier génie logiciel, encodage, équipe développement, framework, génération code, génie logiciel, linux, xml, software development, functional analysis, organic analysis, computer architecture, software engineering workshop, encoding, Development Team, framework, code generation, software engineering
+diagnostic médical, diagnostic médical, expertise médico légale, examen médical, examen psychiatrique, irm, medical diagnosis, medical exam, forensic, psychiatric examination, MRI
+diplôme universitaire, diplôme universitaire, doctorat, University diploma, Ph.D.
+directeur achat, directeur achat, direction achat, décideur achat, purchasing director, purchasing management, purchase decision maker
+directeur financier, directeur financier, directeurs administratifs financier, Chief Financial Officer, CFO
+direction entreprise, direction entreprise, directeur général, équipe dirigeante, dirigeants filiales, company management, Chief Executive Officer, executive team, subsidiaries leaders, CEO
+direction ventes, direction ventes, chef ventes, directeur régional vente, Sales Management, head sales, regional sales director
+discrimination, discrimination, discriminatoire, discrimination, discriminatory
+dossier médical, dossier médical, dossiers médicaux, medical file, medical record
+e commerce, e commerce, site marchand, e-commerce, commercial website
+échange donné, échange donné, échange données informatiques, format échanges données, Trade gave, electronic data interchange, format data exchange
+efficacité energétique, efficacité energétique, performance énergétique, energetic efficiency, energy performance
+église, abbaye, Église, abbey, Church
+électrotechnique, électrotechnique, électrotechnicien, electrical, Électrotechnicien
+embauche, embauche, recrutement personnel, entretien recrutement, hiring, staff recruitment, job interview
+empreinte carbonne, empreinte carbonne, bilan carbone, emission CO2, réduire émission CO2, carbon footprint, carbon footprint, CO2 emission, reduce CO2 emission
+emprunt public, emprunt public, bon trésor, emprunt etat, public borrowing, treasury bills, of state loan
+énergie électrique, énergie électrique, production électricité, Electric energy, electricity production
+énergie éolienne, énergie éolienne, parc éolien, wind power, Wind farm
+énergie hydraulique, énergie hydraulique, énergie hydroélectrique, hydroélectirque, barrage hydroélectrique, centrale hydroélectrique, réservoir hydroélectrique, Hydro-electric power, hydropower, hydroélectirque, Hydroelectric dam, Hydroelectric power plant, hydroelectric reservoir
+énergie nucléaire, énergie nucléaire, centrale nucléaire, nuclear energy, Nuclear plant
+énergie solaire, énergie solaire, photovoltaique, solar energy, photovoltaic
+enseignement supérieur, enseignement supérieur, enseignement universitaire, Higher Education, University education
+entente économique, entente économique, alliance stratégique, cartel, groupement intérêt économique, joint venture, economic agreement, strategic alliance, cartel, Economic Interest
+entrepôt, entrepôt, entrepôt stock, entreposage, magasinage, warehouse, warehouse stock, storage, shopping
+entretien évaluation, entretien évaluation, entretien professionnel, performance review, professional meeting
+épidémie, épidémie, endémie, épidémiologie, epidemic, endemic, epidemiology
+équipage, équipage, personnel aérien, chef cabine, commandant bord, équipage vol, mécanicien navigant, personnel cabine, personnel navigant commercial, PNC, PNT,circuit PN, crew, flight staff, chief cabin officer, Captain, flight crew, flight engineer, cabin staff, cabin crew, PNC, TFN, Circuit PN
+équipement avion, équipement avion, avionique, instrument avionique, aircraft equipment, avionic, avionic instrument
+équipement collectif, équipement collectif, équipement sportif, patinoire, piscine, complexe sportif, community facilities, sport equipment, rink, swimming pool, sports Complex
+espace travail, espace travail, espace réunion, workspace, meeting space
+esprit équipe, esprit équipe, mobilisation équipe, satisfaction équipe, team spirit, team mobilization, team satisfaction
+essuyage, essuyage, essuie main, wiping, hand towel
+établissement culturel, établissement culturel, cultural institution
+établissement santé, établissement santé, centre hospitalier, hôpital, health institution, hospital Center, hospital
+étude marché, étude marché, analyse marché, étude faisabilité, étude impact, étude prix, étude produit, études terrain, market research, market analysis, feasibility study, impact study, price study, Product study, field studies
+étude rentabilité, étude rentabilité, faisabilité économique, profitability analysis, economic feasibility
+étuvage, étuvage, fermentation, parboiling, fermentation
+événement entreprise, événement entreprise, événement interne, séminaire, corporate event, internal event, seminar
+expérimentation, expérimentation, expérience scientifique, experimentation, scientific experiment
+expertise, expérience opérateur, expérience prouvée, expérience terrain, hautement qualifié, large expérience, niveau expérience, montée compétence, operator experience, proven experience, Field experience, high skilled, extensive experience, level experience
+expertise technique, expertise technologique, technicien spécialisé, technical expertise, technological expertise, specialized technicians
+exploitation forestière, exploitation forêt, Industrie forestière, sylviculture, produit forestier, Lumbering, forest exploitation, forest industry, forestry, forest product
+fabrication, fabrication machine, ingénierie, présérie, technique fabrication, manufacturing, manufacturing Machine, engineering, preproduction, manufacturing technique
+fibre textile, fibre textile, fibre naturelle, fibre synthétique, fibre végétale, textile fiber, natural fiber, synthetic fiber, vegetable fiber
+fideliser clients, fidélisation clients, fidéliser clientèle, fidélisation long terme, carte fidélité, customer loyalty, client fidelisation, fidelise client, longterm fidelisation, loyalty card
+film, dessin animé, western, nouvelle vague, movie, cartoon, western, new wave
+financement, capital risque, venture capital, crédit-bail, financement entreprise, financement extérieur, financement participatif, funding, capital risk, venture capital, leasing, financing company, external funding, Crowdfunding
+finances publiques, finances publiques, finances locales, public finances, local Finance
+flexibilité, attitude flexible, offre flexibilité, flexibility, flexible attitude, offers flexibility
+flux tendu, flux tendu, just in time, juste-à-temps, lean, délai livraison, lean, just in time, just-in-time, delivery time
+flux trésorerie, flux trésorerie, fonds roulement, trésorerie, balance capitaux, treasury flow, working capital, Treasury, Capital balance
+fonds investissement, fonds investissement, fonds commun placement, fonds dotation, fonds souverain, fonds spécialisé, Investment fund, Investment Common Fund, endowment funds, sovereign funds, specialized fund
+force vente, force vente, équipe commerciale, équipe vente, selling power, commercial team, sales team
+formation, acquérir connaissance, apprentissage, contenu formation, cours soir, offre formation, séance formation, stage, transfert compétence, training, acquire knowledge, learning, Training content, night classes, training offer, training session, internship, know-how transfer
+formation distance, formation distance, enseignement distance, école numérique, distance training, distance education, digital school
+formation professionnelle, formation professionnelle, formation alternance, formation continue, formation entreprise, formation permanente, formation terrain, professional training, alternating training, training, corporate training, continuing education, on job training
+frein, système freinage, brake, braking system
+fusée, lanceur spatial, rocket, space launcher
+fusion entreprises, fusion entreprises, concentration entreprises, merger companies, concentration companies
+gagner efficacité, gagner temps, gain productivité, meilleure productivité, gain efficiency, save time, productivity gain, better productivity
+ged, gestion électronique documents, electronic management documents
+génétique, gène, génome, code génétique, génôme, genetic, gene, genome, genetic code, genome
+genre littéraire, genre littéraire, roman, literary genre, novel
+gestion composant, achat composant, component management, component provisioning
+gestion crise, géré crise, crisis management, managed crisis
+gestion déchets, gestion déchets, déchet industriel, waste management, industrial waste
+gestion entreprise, gestion implantations, gestion participative, gouvernement entreprise, business management, management settlements, participatory management, corporate governance
+gestion financière, gestion créances, gestion risque client, financial management, Debt Management, management customer risk
+gestion flux, gestion flux, ligne flux, flow management, Online stream
+gestion garantie, contrôle garantie, warranty management, warranty control
+gestion personnel, gestion carrière, gestion compétences, gestion ressources humaines, ressources humaines, staff management, Career Management, skills management, Human Resource Management, human ressources
+gestion production, gestion production, gpao, production management
+gms, grande distribution, grande surface, grandes enseignes, hard discounter, hypermarché, retail, store, major retailers, hard discounter, hypermarket
+grandes écoles, grandes écoles, école commerce, école ingénieur, large schools, business school, engineer school
+grève, grève, conflit social, strike, social conflict
+grossiste, grossiste, commerce gros, wholesaler, wholesale
+habitat, hlm, logement social, logement locatif, maison individuelle, résidence principale, résidence secondaire, rénovation habitat, public housing, rental housing, individual house, Principal residence, second home, home renovation
+hélicoptère, helicopter, héliport, helicopter, Heliport
+hépatite C, virus hépatite c, Hepatitis C Virus
+horaire pratique, horaire pratique, harmonisation correspondance, convenient schedules, harmonisation connections
+horticulture, horticulture, horticole, horticulture, horticultural
+hôtellerie restauration, hôtellerie restauration, hôtel, hotels restaurants, hotel
+hôtesse, hôtesse, hôtesse air, steward, stewardess, air hostess, steward
+huile végétale, huile végétale, huile alimentaire, vegetable oil, Edible oil
+hydrocarbure, pétrole, pétrole brut, pétrole schiste, énergie fossile, gaz naturel, gaz pétrole, gaz schiste, gazole, Hydrocarbon, oil, Crude oil, oil shale, fossil fuels, natural gas, gas oil, shale gas, diesel
+hygiène, hygiène, produit hygiène, produit sanitaire, contrôle hygiène, hygiene, hygiene product, health product, hygiene control
+identité visuelle, identité visuelle, logo, charte graphique, visual identity, logo, graphical charter
+image positive, image positive, image qualité, image modernisée, positive image, quality image, modernized picture
+imagerie médicale, imagerie médicale, imagerie résonance magnétique, medical imaging, magnetic resonance imaging
+immobilier, marché immobilier, parc immobilier, immeuble qualité environnemental, immovable, property market, real estate, environmental quality building
+immunologie, immunothérapie, immunology, immunotherapy
+imprimerie, imprimerie, Imprimeur, printing house, Printer
+industrie aérospatiale, industrie aérospatiale, industrie aéronautique, Industrie spatiale, ingénierie aéronautique, aerospace industry, airline industry, Space industry, aeronautical engineering
+industrie automobile, constructeur automobile, automobile industry, Car manufacturer
+industrie btp, industrie btp, génie civil, btp industry, civil engineering
+industrie chimique, carbochimie, chimie verte, industrie caoutchouc, Industrie pétrochimique, industrie pétrolière, chemical industry, carbochemistry, green chemistry, rubber industry, petrochemical industry, oil industry
+industrie habillement, industrie habillement, Industrie vêtement, industrie textile, clothing industry, garment industry, textile industry
+industrie pêche, Industrie pêche, pêche industrielle, fishing industry, industrial fishing
+industrie pharmaceutique, industrie pharmaceutique, laboratoire pharmaceutique, pharmaceutical industry, Pharmaceutical laboratory
+infogérance, outsourcing
+information financière, information financière, avis financier, financial information, financial review
+injection cutanée, injection intramusculaire, injection intraveineuse, subcutaneous injection, intramuscular injection, intravenous injection
+innovation, innovation technologique, aider innovation, innovant, innovation, technological innovation, supporting innovation, innovative
+insémination artificielle, Insémination artificielle, fécondation in vitro, Artificial insemination, in vitro fertilization
+installation électrique, installation électrique, ligne haute tension, Electrical Installation, high voltage line
+institut beauté, institut beauté, coiffure, manucure, beauty Institute, hairdressing, manicure
+interface logiciel, interface logiciel, interface utilisateur, software interface, user interface
+invention, Invention brevetée, invention, patented invention
+investisseur, investissement étranger, investor, investment abroad
+Islam, Islamisme, mosquée, Islam, Islamism, Mosque
+isolant acoustique, isolant acoustique, laine verre, acoustic insulation, glass wool
+ivg, interruption grossesse, IVG, abortion
+journalisme, journalisme, journal télévisé, journalism, newscast
+Judaïsme, judaïsme, synagogue, Judaism, synagogue
+juridiction, tribunal, cour assises, cour appel, conseil prud hommes, jurisdiction, court, assizes, court Appeal, labor relations board
+labélisation, label origine, label qualité, labeling, original label, quality label
+lait, industrie laitière, milk, dairy industry
+lancement produit, introduction marché, product launch, market introduction
+levée fonds, levée fonds, mise fonds, fundraising, downpayment
+livraison, livraison porte à porte, home delivery, baggage delivery, livraison bagage, livrer bagage, delivery
+logiciel, software, logiciel libre, logiciel propriétaire, plateforme logicielle, software, Free software, proprietary software, software platform
+lycée, lycée, lycée professionnel, high school, technical College
+maçonnerie, maçonnerie, mortier, masonry, mortar
+magasin, point vente, libre service, shop, point sale, self-service
+maîtrise risque, maîtrise aléa, minimiser risque, réduction risques, maîtrise opérationnelle, principe précaution, risk control, hazard control, minimize risk, risk reduction, operational control, precautionary principle
+malversation, fraude, délit initié, corruption, conflit intérêt, embezzlement, fraud, insider trading, corruption, interest conflict
+marché boursier, marché boursier, marché option, marché terme, marché valeur mobilière, stock market, option market, futures market, securities market
+marché interbancaire, marché interbancaire, fonds compensation, interbank market, compensation fund
+marché monétaire, marché monétaire, marché changes, marché devises, money market, Change market, currency market
+marge bénéficiaire, marge bénéficiaire, marge commerciale, perte commerciale, rentabilité, bénéfice exercice, profit margin, commercial margin, business loss, profitability, the exercices benefit
+marketing, marketing direct, marketing internet, marketing relationnel, marketing viral, mise marché, plan marketing, marketing, Direct marketing, internet marketing, relationship marketing, viral marketing, marketing, Marketing plan
+maroquinerie, maroquinier, leather goods, Maroquinier
+marque commerciale, marque distributeur, trademark, distributor brand, mdd
+matériau composite, Matériau composite, fibre carbone, fibre verre, Composite material, carbon fiber, fiberglass
+matériel agricole, matériel agricole, motoculture, agricultural material, garden
+matériel chantier, matériel chantier, engin chantier, Construction equipment, construction machine
+matériel scolaire, matériel scolaire, livre scolaire, school equipment, White Book
+mba, master, B-School
+médecine, médecin, médecin traitant, médecine générale, médecine interne, médecine urgence, médecine ville, medicine, doctor, general medicine, internal Medicine, emergency medicine, community medicine
+merchandising, aménagement magasin, merchandising, shopfitting
+message publicitaire, petite annonce, plv, imprimé publicitaire, flyer, mailing, advertisement, add, POS, junk mail, flyer, mailing
+métallurgie, Métaux lourds, sidérurgie, Industrie sidérurgique, Industrie aluminium, industrie métallurgique, industrie métaux non ferreux, aciérie, metallurgy, Heavy metals, steel industry, aluminum industry, metal industry, non-ferrous metal industry, steelwork
+méthode recherche, méthode recherche, méthode heuristique, research method, heuristics
+méthodologie, méthode éprouvée, manque méthode, manque organisation, mesure préventive, methodology, proven method, lack method, lack organization, preventive measure
+micro organisme, microbe, organisme microbien, procaryote, streptocoque, unicellulaire, virus, microbiologie, microorganism, microbe, microbial organism, prokaryotic, streptococcus, unicellular, virus, microbiology
+mieux cibler, meilleur positionnement, better target, better positioning
+mieux vendre, méthode vente, technique vente, best selling, sales method, selling Technics
+mobilier, meuble, mobilier urbain, furniture, urban furniture
+mobilité interne, mobilité personnel, internal employment mobility, employee mobility
+modèle économétrique, modèle économétrique, modèle économique, modélisation financière, econometric model, economic model, financial modeling
+modiste, modiste, chapelier, styliste, Milliner, mode designer, stylist
+moto, motocyclette, vélomoteur, motorbike, motorcycle, moped
+multiplicité offre, multiplicité offre, plus choix, multiple offers, more choice
+musée, musée, muséologie, Museum, museology
+musique, guitare, instrument musique, jazz, opéra, orchestre, rap, reggae, rock, trompette, violon, violoncelle, music, guitar, violin, cello, music instrument, jazz, Opera, orchestra, rap, reggae, rock, trumpet
+navire croisière, paquebot, cruise ship, boat
+nouveau produit, procédé nouveau, produit innovant, New product, new process, innovative product
+officier pilote, officier pilote, copilote, pilot officer, Co-pilot
+offre commerciale, offre commerciale, publicité, promotion, commercial offer, promotion
+offre publique achat, offre publique achat, take-over bid
+offre publique échange, offre publique échange, Exchange Offer
+oléoduc, pipeline
+opération boursière, opa, ope, stock exchange transaction
+opération vol, opération aérienne, programme vol, service vol, flight operation, airline operation, flight program, flight service
+ordonnancement, ordre fabrication, plan fabrication, scheduling, fabrication order, Plan manufacturing
+organisation fabrication, organisation production, organisation chantier, manufacturing organization, organization production, site organization
+organisme financier, société affacturage, société crédit, société financière, société investissement, système bancaire, banque, établissement bancaire, banque centrale, banque mondiale, compagnie assurances, institution financière, financial agency, factoring company, credit company, finance company, investment company, banking system, bank, banking establishment, central bank, world Bank, insurance company, Financial institution
+organisme vivant, organisme vivant, mécanismes vivant, living organism, living mechanisms
+orientation scolaire, orientation scolaire, conseiller orientation, school counseling, guidance counselor
+ovin, aviculture, ovine, aviculture
+parachutisme, parapente, skydiving, paragliding
+parc attraction, parc aquatique, parc loisirs, amusement park, water park, recreation Park
+parrainage publicitaire, politique sponsoring, advertising sponsorship, sponsorship policy
+parrainage sportif, sponsoring sportif, sponsorisation, sponsoring, sport sponsorship, sponsorship
+partenariat, partenariat commercial, partenariat industriel, co-entreprise, partnership, commercial partnership, industrial partnership, joint venture
+parti politique, parti union nationale, extrême droite, extrême gauche, gauche radicale, political party, National Unity Party, far right, leftmost, radical left
+passager aérien, passager haute contribution, air passenger, Passenger high contribution
+patrimoine culturel, site historique, vieille ville, Cultural Heritage, historical site, old City
+pêche, pêcherie, peach, fishery
+personnel sol, personnel sol, chef avions, chef escale, ground staff, head planes, Station Manager
+pétrolier, tanker
+pharmacologie, pharmacie, pharmacovigilance, Pharmacology, Pharmacy, pharmacovigilance
+pib, produit intérieur brut, gdp, Gross domestic product
+piece rechange, pièce détachée, pièces PMA, spare part, spare parts, PMA parts
+place marché, foire commerciale, marketplace, trade fair
+plan carrière, orientation professionnelle, career plan, Professional orientation
+plan communication, plan média, communication plan, media plan
+plan comptes, plan comptable, chart accounts, accounting
+plan formation, programme formation, programme éducatif, parcours pédagogique, Training plan, training program, educational program, learning path
+plan stratégique, plan triennal, Strategic plan, year plan
+planification financière, planification financière, planning financier, planification stratégique, financial planning, financial planning, strategic planning
+plasturgie, industrie plastique, Plastics, plastic industry
+plate-forme logistique, plate-forme logistique, réseau logistique, logistic platform, logistic network
+plâtre, plâtrerie, Plâtrier, plaster, plastering, Plasterer
+plus value, plus-value, capital gain
+politique communication, stratégie communication, capital gain, communication policy, communication strategy
+politique économique, politique budgétaire, politique monétaire, programme budgétaire, quantitative easing, economic policy, budget policy, Monetary Policy, budget program, quantitative easing
+politique environnement, politique environnementale, plan climat, environmental policy, environemental policy, climate plan
+politique rémunération, système rémunération, rémunération, remuneration policy, pay system, remuneration
+politique RH, politique ressource humaine, politique RH responsable, politique sociale, recrutement, HR policy, human resource policy, responsible hr policy, social policy, recruitment
+positionnement, repositionnement, positionnement produit, position dominante, positioning, repositioning, positioning product, leading position
+pratique commerciale, politique tarifaire, politique commerciale, commercial practice, tariff policy, commercial policy
+pratique responsable, politique responsable, socialement responsable, responsible practice, responsible policy, socially responsible
+prendre soin environnement, préserver environnement, protéger environnement, protection environnement, care environment, preserve environment, protect environment, environmental protection
+préserver réputation, préserver crédibilité, preserve reputation, maintain credibility
+pressing, teinturier, dry cleaning, Dry cleaner
+prix bas, prix mini, low cost, low prices, mini price
+procédure fabrication, process fabrication, processus production, production flux tendu, manufacturing procedure, process fabrication, production process, lean production
+produit beauté, cosmétique, parfum, beauty product, cosmetic, perfume
+produit bio, produit biologique, bio product, biologic
+produit céréalier, céréale, blé, orge, avoine, cereal product, wheat, corn, barler, oat
+produit chimique, produit chimique agricole, Produit chimique industriel, solvant, bactéricide, élastomère, engrais, pétrochimie, phosphate, pigment, Chemical product, agricultural chemical, industrial chemical, solvent, bactericidal, elastomer, fertilizer, petrochemistry, phosphate, pigment
+produit financier, produit dérivé, Financial product, derived product
+produit frais, produit laitier, yaourt, yoghourt, Fresh product, dairy product, yogurt, yoghurt
+produit mer, produit pêche, sea ​​product, fishing product
+produit phytosanitaire, produit entretien, phytosanitary product, cleaning product
+produit thérapeutique, produit thérapeutique, médicament, therapeutic, drug
+professeur écoles, professeur écoles, instituteur, school teacher, teacher
+professionnalisation, qualification professionnelle,professionalisation, Professional qualification 
+professionnel santé, personnel médical, infirmier, health professional, medical staff, male nurse
+programmation, langage html, langage programmation, modélisation informatique, outil programmation, php, programmation orientée objet, rapid application development, interopérabilité, Protocole SSL, programming, html, programming language, computer modeling, programming tool, php, OOP, rapid application development, interoperability, SSL
+programme entretien, Programme entretien, programme maintenance, programme maintenance composant, maintenance program
+programme fidélisation, programme fidélisation, programme fidélité, loyalty program
+programme formation, programme scolaire, Course study
+propreté sols, propreté sols, nettoyant surface, clean soil, Surface Cleaner
+propriété industrielle, propriété intellectuelle, industrial property, intellectual property
+prospecter, prospection commerciale, prospect, sales prospection
+prototype, prototypage, prototyping
+proximité client, proximité client, proche consommateurs, customer proximity, close consumers
+publication compte, publication compte, rapports financiers, published account, financial reports
+publicité, Publicité légale, Publicité trompeuse, publicity, legal Advertising, misleading
+radiologie, radiographie, radiology, radiography
+randonnée, trekking, hiking, trekking
+réacteur, moteur réaction, reactor, jet engine
+recette fiscale, recette publique, tax revenue, public recipe
+recevoir promotion, être promu, promotion individuelle, receive promotion, being promoted, individual promotion
+réchauffement climatique, réchauffement planète, global warming
+recherche scientifique, Recherche technologique, recherche appliquée, recherche biomédicale, Recherche fondamentale, recherche médicale, recherche opérationnelle, recherche pharmaceutique, Scientific Research, technology research, applied research, biomedical, Fondamental research, Medical research, operational research, pharmaceutical research
+récompenser, reçoit cadeau, reward, receives gift
+réduction coût, diminution coût, réduire couts, économie de cash, réduire coût opérationnel client, économie échèle, économie substancielle, optimiser dépense, bénéfice coût, challenge coût, solution économique, souci économie, cost reductions, lower costs, to lower cost, cash saving, reduce customer operational cost, scale saving, substantial saving, optimize spending, cost-benefit, cost challenge, cost effective solution, reasons economy
+régime complémentaire, complémentaire santé, mutuelle, complementary scheme, Complementary Health, mutual
+régime fiscal, régime fiscaux, tax system, tax regime
+région touristique, station balnéaire, village montagne, village vacances, tourist region, seaside resort, mountain village, holiday Village
+relation client, relation commerciale, customer relationship, business relationship
+réorganisation, plan restructuration, rationalisation, restructuration, reorganization, restructuring Plan, rationalization, restructuring
+réparation, remise état, réparation atelier, réparation composant, réparation pièce détachée, rétrofit, échange standard, solution réparation, cycle réparation, repair, repair, in-house repair, component repairs, part repair, overhaul, standard exchange, repair solution, repair cycle
+répondre besoin, satisfaire demande, renseigner client, answer need, satisfy demand, inform customer
+reporting, tableau bord, reporting, dashboard
+représentation personnel, délégué personnel, délégué syndical, staff representation, staff representative, Union representative
+réseau numérique, réseau privé virtuel, réseau télécommunication, serveur DNS, serveur FTP, Digital network, virtual private network, telecommunication network, DNS server, FTP server
+réseau routier, signalisation routière, road network, road sign
+restaurant, brasserie, restaurant, Brewery
+résultat exercice, perte exercice, produit exploitation, résultat déficitaire, résultat exploitation, marge brute autofinancement, perte entreprise, The result exercise, loss year, Exploitation product, negative result, Operating income, cash flow, loss business
+retour investissement, roi, return on investment, King
+revêtement sol, revêtement sol, moquette, flooring, carpet
+revêtement surface, revêtement surface, enduit, coating surface, coating
+risque financier, risque financier, risk management, financial risk, risk management
+risque pays, risque pays, risque change, country risk, risk change
+robotique, robotisation, robotics, automation
+rupture stock, rupture livraison, sold out, break delivery
+sales force, sales organization, sales force, sales organization
+salle spectacle, cinémathèque, boarding area, cinema
+salon professionnel, espace exposition, tradeshow, exhibition space
+SAV, service après vente, after sales service
+schéma conceptuel, schéma conceptuel, schéma informatisé, schéma numérique, conceptual scheme, computerized scheme, numerical scheme
+secret affaires, secret affaires, secret industriel, business secrecy, industrial secret
+secteur public, fonction publique, public sector, Public function
+sécurité aérienne, sécurité vol, Aviation safety, flight safety
+sécurité routière, sécurité routière, prévention routière, road safety, road Prevention
+segment marché, segment marché, segmentation client, segmentation produit, market segment, customer segmentation, product segmentation
+semi conducteur, semi conducteur, semiconducteur, semiconductor
+service client, service consommateurs, support client, customer service, consumer Service, Customer Support
+service escale, service escale, organisation escale, ground handling, stop organization
+services personne, services personne, aide domicile, résidence hôtelière, personal services, home help, hotel Residence
+sgbd, sgbd, base données, système gestion base données, sql, database, database management system
+sicav, sicav, opcvm, UCITS
+sida, sida, séropositivité, AIDS, seropositivity
+siège individuel, siège particulier, individual seat, particular seat
+ski, skieur, sport montagne, téléphérique, domaine skiable, ski, skier, mountain sports, cable car
+soin médicaux, traitement médical, soin ambulatoire, soin bouche, soin intensif , soin palliatifs, soins infirmiers, soins spécialisés, medical care, medical treatment, outpatient care, mouth care, intensive care, palliative care, medical care, specialized care
+solution personnalisée, solution orientée client, service personnalisé, customized solution, customer-driven solution, personalized service
+sourcing, recherhce fournisseur, achat, sourcing, supplyer search, purchase
+spectrométrie, spectrométrie, spectroscopie, spectrometry, spectroscopy
+station montagne, station sports hiver, mountain resort, ski resort
+stock marchandises, Stock marchandises, stockage marchandises, stock sécurité, stock composant, stock disponible, stock local, Merchandise inventory, Storage goods, safety stock, component inventory, Available stock, locally-stored inventory
+stratégie, stratégie écologique, stratégie entreprise, stratégie industrielle, strategy, ecological strategy, business strategy, industrial strategy
+suivi médical, surveillance médicale, surveillance clinique, surveillance patient, medical supervision, clinical monitoring, Patient monitoring
+supermarché, supérette, supermarket, minimarket
+supply chain, supply chain management, Supply Chain Management
+système échappement, système échappement, échappement catalytique, exhaust system, catalytic exhaust
+système information, système information, système expert, Information system, expert system
+système monétaire, système monétaire, zone sterling, monetary system, sterling area
+système scolaire, système scolaire, milieu scolaire, School system, School
+tarif attractif, tarif préférentiel, attractive price, preferential tariff
+taux intérêt, taux intérêt, taux escompte, interest rate, discount rate
+technique conservation, pasteurisation, preservation technique, pasteurization
+technique recherche, technique modélisation, technique laboratoire, research technique, modeling technique, laboratory technique
+technologie propre, technologie propre, technologie non polluante, technologie verte, clean technology, green technology
+téléphonie, téléphonie, téléphonie mobile, telephony, mobile telephony
+télévision, télévision, téléréalité, émission télévision, jeu télévisé, téléfilm, television, reality show, TV show, game show, TV movie
+temps attente, temps réponse, délai attente, réduction délais, réduire délais, waiting time, response time, waiting period, reducing delays, reduce delays
+territoire commercial, zone chalandise, zone commerciale, trading area, catchment area, commercial zone
+tourisme, Industrie touristique, tourisme agrément, tourisme culturel, tourism, tourism industry, Tourism accreditation, Cultural tourism
+tourisme affaires, tourisme affaires, voyageur affaires, destination affaires, business tourism, business traveler, business destination
+traitement données, traitement lot, transcodage, workflow, numérisation, data processing, batch processing, transcoding, workflow, scan
+traitement eau, gestion eau, assainissement eaux usées, water treatment, Water Management, wastewater treatment
+transaction immobilière, courtage immobilier, real estate transaction, real estate Brokerage
+transport commun, transport ferroviaire, train, transport scolaire, trolleybus, autobus, autocar, train banlieue, tramway, public transport, rail, train, School transportation, Trolley-bus, bus, coach, commuter Train, streetcar
+transport énergie, réseau électrique, transport électricité, energy transport, mains, electricity transmission
+transport fluvial, voie navigable, péniche, port fluvial, River transport, waterway, barge, river port
+transport fret, transport cargo, transport marchandises, transporteur fret, avion Cargo, cargo, compagnie frêt, conteneur, flotte cargo, gestion allotement, logistique transport, transport logistique, marché cargo, marine marchande, opérateur cargo, porte-conteneurs, transport combiné, Transport intermodal, Transport matière dangereuse, transitaire, freight transport, cargo transport, haulage, freighter, plane, cargo, freight company, Container, cargo fleet, allotment management, logistics transport, logistic transport, cargo market, Merchant navy, cargo operator, Container ship, combined transport, intermodal, hazardous material transportation, forwarding agent
+transport maritime, voie maritime, route maritime, port maritime, maritime transport, Seaway, sea ​​route, Seaport
+transport passager, opérateur passager, transport voyageurs, transport collectif, passenger transportation, passenger operator, motorcars, transit
+uml, unified modeling language, unified modeling language
+urbanisme, aménagement urbain, architecture rurale, architecture urbaine, cadastre, cité dortoir, document urbanisme, enquête utilité publique, espace urbain, espace vert, métropole, parc stationnement, parc technologique, permis construire, plan occupation sols, plan urbanisme, rénovation urbaine, rue piétonne, technopole, urbanisation, ville nouvelle, voirie urbaine, zac, zone aménagement urbain, zone industrielle, zup, town planning, urban development, rural architecture, urban architecture, cadastre, dormitory town, general plan, public inquiry, urban space, green area, metropolis, parking, technology park, building permit, Plan land use, Master Plan, renewal, pedestrian street, technopolis, urbanization, new city, urban road, zac, urban development area, Industrial Zone, zup
+usinage, usinage, émaillage, emboutissage, étirage, formage, fraisage, galvanisation, laminage, scellage, sciage, soudage, traitement thermique, trempage, machining, enamelling, stamping, drawing, forming, drilling, galvanization, lamination, sealing, sawing, welding, heat treatment, soaking
+vaccin, vaccination, vaccine, vaccination
+véhicule blindé, char, armored vehicle, tank
+véhicule utilitaire, camion, poids lourd, convoi exceptionnel, commercial vehicle, truck, heavy weights, Exceptional convoy
+veille commerciale, veille concurrentielle, veille économique, veille informationnelle, veille stratégique, business intelligence, competitive Intelligence, enconomic intelligence, information monitoring, BI
+vendre, accéder marché, best selling, sell, sales method, selling Technics, market access
+vente, télévente, vente téléphone, vente domicile, sale, telesales, telephone sales, door-to-door sale
+verrerie art, vitrail, art glass, stained glass
+villégiature, visite touristique, Vacationing, Tourist visit
+vin, oenologie, wine, oenology
+viticulture, cépage, vendange, vignoble, viticole, viticulture, grape, vintage, vineyard, wine
+voie circulation, route, autoroute, voie maritime, voie aérienne, traffic way, road, motorway
+voyager famille, voyager famille, voyager avec bébé, famille voyageant enfant, family travel, travel with baby, family traveling child
+#notice we use "gib" instead of "GiB" so any WordDelimiterFilter coming
+#after us won't split it into two words.
+
+# Synonym mappings can be used for spelling correction too
+pixima => pixma
+
+

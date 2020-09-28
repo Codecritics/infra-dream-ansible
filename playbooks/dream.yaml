@@ -1,15 +1,35 @@
 - roles:
     - { role: initial_setup, tags: setup }
-    - { role: php, tags: php }
-    - { role: composer, tags: php }
-    - { role: mysql, tags: database }
+    - { role: php, tags: php, user: dream, remote_user: dream }
+    - { role: composer, tags: php, user: dream, remote_user: dream }
+    - { role: mysql, tags: database, user: dream, remote_user: dream }
+    - { role: solr, tags: solr, user: dream, remote_user: dream }
 
   hosts:
-    - dev
+    - new_dev
   user: root
   vars:
     users_root:
       - marius
       - prachi
-      - rishav
+      - prachi2
+      - prachi3
       - subbhash
+  tasks:
+    - name: Clone the search app
+      git:
+        repo: https://gitlab.com/franck.gryson/search-access-console.git
+        dest: {{ search_project_name }}
+      become: true
+
+    - name: Clone the CollecteApi app
+      git:
+        repo: https://Codecritics@bitbucket.org/Codecritics/crawlerapi.git
+        dest: {{ collecte_project_path }}
+      become: true
+
+    - name: Clone the Admin Console app
+      git:
+        repo: https://bitbucket.org/prachiyadav/consoleadmin/src/master/
+        dest: {{ console_project_path }}
+      become: true

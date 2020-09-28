@@ -3,9 +3,10 @@
   apt:
     name: php-fpm
     state: latest
+  become: yes
 
 - name: Install additional PHP packages
   apt:
     name: "{{ install_packages }}"
     state: latest
-
+  become: yes

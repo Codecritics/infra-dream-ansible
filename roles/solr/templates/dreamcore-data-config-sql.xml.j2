@@ -1,0 +1,39 @@
+<dataConfig>
+    <dataSource type="JdbcDataSource"
+                driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://{{ ansible_facts.eth0.ipv4.address }}/{{ mysql_database }}"
+                user="{{ mysql_user }}"
+                password="{{ mysql_pass }}" />
+    <document>
+        <entity name="item" pk='id' query="select id, sku, last_modified, title, description_txt, text_t, Dynamic, `language`, Typededoc ,Origine,key_metadata,auth_groups  from biengine"
+                deltaImportQuery="select id, sku, last_modified, title, description_txt, text_t, Dynamic, `language`, Typededoc ,Origine,key_metadata,auth_groups from biengine where id='${dih.delta.id}'"
+                deltaQuery="select id from biengine where last_modified &gt; '${dih.last_index_time}'">
+            <field column="id" name="id" />
+            <field column="sku" name="sku" />
+            <field column="last_modified" name="last_modified" />
+            <field column="title" name="title" />
+            <field column="description_txt" name="key" />
+            <field column="text_t" name="text_t" />
+            <field column="Dynamic" name="dynamic" splitBy=","/>
+            <field column="language" name="language" />
+            <field column="Typededoc" name="typededoc" />
+            <field column="Origine" name="origine" />
+            <field column="key_metadata" name="key_metadata" />
+            <field column="auth_groups" name="auth_groups" />
+
+            <entity name="facetlist_Fonction" query="select Fonction,id from facetlist where indexation_id='${item.id}'">
+                <field column="Fonction" name="f" />
+            </entity>
+            <entity name="facetlist_Secteur" query="select Secteur,id from facetlist where indexation_id='${item.id}'">
+                <field column="Secteur" name="s" />
+            </entity>
+            <entity name="facetlist_Typedinfo" query="select Typedinfo,id from facetlist where indexation_id='${item.id}'">
+                <field column="Typedinfo" name="t" />
+            </entity>
+            <entity name="facetlist_Theme" query="select Theme,id from facetlist where indexation_id='${item.id}'">
+                <field column="Theme" name="th" />
+            </entity>
+
+        </entity>
+    </document>
+</dataConfig>

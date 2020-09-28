@@ -3,6 +3,7 @@
   apt:
     name: [  "mysql-server", "python3-pymysql" ]
     state: latest
+  become: yes
 
 - name: Removes anonymous MySQL accounts
   mysql_user:
@@ -11,14 +12,16 @@
     state: absent
     login_unix_socket: /var/run/mysqld/mysqld.sock
   no_log: true
+  become: yes
 
 - name: Create a new database for the application
   mysql_db:
     name: "{{ mysql_database }}"
     state: present
     login_unix_socket: /var/run/mysqld/mysqld.sock
+  become: yes
 
-- name: Create database user for the todo_list app
+- name: Create database user for the Apps
   mysql_user:
     name: "{{ mysql_user }}"
     password: "{{ mysql_pass }}"
@@ -26,17 +29,26 @@
     state: present
     login_unix_socket: /var/run/mysqld/mysqld.sock
   no_log: true
+  become: yes
 
+# TODO DUMP the database
+#- name: allow access from this server the old one
+#  iptables: chain=INPUT source={{ ansible_default_ipv4["address"] }} jump=ACCEPT comment="Allow access from new {{ ansible_fqdn }}"
+#  remote_user: codecritics
+#  delegate_to: current_dev
+#
+#- name: Dump multiple databases
+#  community.mysql.mysql_db:
+#    state: dump
+#    name: wdream
+#    login_host:
+#    login_password:
+#    target: /tmp/dump.sql
+#  delegate_to: current-dev
 
- # Copy database dump file to remote host and restore it to database 'my_db'
-- name: Copy database dump file
-  copy:
-    src: todo_dump.sql
-    dest: /tmp
-
-- name: Restore database
-  mysql_db:
-    name: "{{ mysql_database }}"
-    state: import
-    target: /tmp/todo_dump.sql
-    login_unix_socket: /var/run/mysqld/mysqld.sock
+#- name: Restore database
+#  mysql_db:
+#    name: "{{ mysql_database }}"
+#    state: import
+#    target: /tmp/todo_dump.sql
+#    login_unix_socket: /var/run/mysqld/mysqld.sock
