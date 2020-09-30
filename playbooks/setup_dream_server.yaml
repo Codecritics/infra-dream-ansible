@@ -1,15 +1,9 @@
 - roles:
     - { role: initial_setup, tags: setup }
-    - { role: php, tags: php, user: dream, remote_user: dream }
-    - { role: composer, tags: php, user: dream, remote_user: dream }
-    - { role: mysql, tags: database, user: dream, remote_user: dream }
-    - { role: solr, tags: solr, user: dream, remote_user: dream }
-    - { role: nginx, tags: nginx, user: dream, remote_user: dream }
-    - { role: docker, tags: docker, user: dream, remote_user: dream }
 
   hosts:
     - new_dev
-  user: dream
+  user: root
   vars:
     users_root:
       - marius
@@ -24,16 +18,19 @@
         repo: git@gitlab.com:franck.gryson/search-access-console.git
         dest: "{{ search_project_path }}"
         key_file: "~dream/.ssh/id_rsa"
-      tags: "git"
+      become: true
+      tags: "search"
 
     - name: Clone the CollecteApi app
       git:
         repo: https://Codecritics@bitbucket.org/Codecritics/crawlerapi.git
         dest: "{{ collecte_project_path }}"
-      tags: "git"
+      become_user: dream
+      become: true
 
     - name: Clone the Admin Console app
       git:
         repo: https://bitbucket.org/prachiyadav/consoleadmin/src/master/
         dest: "{{ console_project_path }}"
-      tags: "git"
+      become_user: dream
+      become: true

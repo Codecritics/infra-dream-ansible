@@ -1,27 +1,30 @@
 ---
-- name: Install nginx
-  apt:
-    name: nginx
-    state: latest
-    update_cache: yes
+- name: Nginx Installation
+  block:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: latest
+        update_cache: yes
 
-- name: Remove default file inside sites-available
-  file:
-    path: /etc/nginx/sites-available/default
-    state: absent
+    - name: Remove default file inside sites-available
+      file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
 
-- name: Setting Up Nginx Collecte API default site
-  template:
-    src: collecte-api.conf.j2
-    dest: /etc/nginx/sites-enabled/collecte-api
+    - name: Setting Up Nginx Collecte API default site
+      template:
+        src: collecte-api.conf.j2
+        dest: /etc/nginx/sites-enabled/collecte-api
 
-- name: Setting Up Nginx Console site
-  template:
-    src: console.conf.j2
-    dest: /etc/nginx/sites-available/consoleadmin
+    - name: Setting Up Nginx Console site
+      template:
+        src: console.conf.j2
+        dest: /etc/nginx/sites-enabled/consoleadmin
 
-- name: Setting Up Nginx Search site
-  template:
-    src: console.conf.j2
-    dest: /etc/nginx/sites-available/search
-  notify: restart nginx
+    - name: Setting Up Nginx Search site
+      template:
+        src: search.conf.j2
+        dest: /etc/nginx/sites-enabled/search
+      notify: restart nginx
+  become: true

@@ -1,0 +1,7 @@
+- name: Configure Iptables
+  include:
+    install_docker.yaml
+
+- name: Install the containers
+  include:
+    configure_docker_apps.yaml

@@ -1,0 +1,39 @@
+---
+- name: Install the dockerized apps
+  block:
+
+    - name: Clone repositories
+      include: clone_repositories.yaml
+      tags: "clone"
+
+    - name: Configure PHP API
+      include: configure_apps.yaml
+      tags: "configure_app"
+
+    - name: Create docker-compose.yaml from template
+      template:
+        src: templates/docker-compose.yaml.j2
+        dest: "~{{ setup_user }}/apps/docker-compose.yaml"
+        owner: "{{ setup_user }}"
+        group: docker
+
+    - name: Copy the PHP Dockerfile Image
+      copy:
+        src: "{{ role_path }}/files/php/Dockerfile"
+        dest: "~{{ setup_user }}/apps/Dockerfile"
+
+    - name: Setting Up Nginx Search app
+      template:
+        src: apps.conf.j2
+        dest: "~{{ setup_user }}/apps/nginx/default.conf"
+      become: true
+
+    - name: Launch the containers
+      docker_login:
+        username: codecritics
+        password: dockercocoluluk93+
+
+    - name: Pull the images
+      docker_compose:
+        project_src: "~{{ setup_user }}/apps"
+        state: present

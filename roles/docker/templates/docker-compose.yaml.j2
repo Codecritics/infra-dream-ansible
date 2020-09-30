@@ -1,0 +1,47 @@
+version: '3'
+services:
+
+  #PHP Service
+  {{ search_app_name }}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image:  wdream/dream-php:latest
+    container_name: {{ search_app_name }}
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: {{ search_app_name }}
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./{{ search_app_name }}:/var/www
+#      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "8888:8888"
+      - "8889:8889"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./nginx/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+#Volumes
+#volumes:
+#  dbdata:
+#    driver: local

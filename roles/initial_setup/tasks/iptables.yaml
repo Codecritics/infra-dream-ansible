@@ -32,4 +32,5 @@
 
 - name: netfilter-persistent
   action: service name=netfilter-persistent state=restarted
+  become: true
 

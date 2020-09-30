@@ -1,10 +1,15 @@
 ---
+env: dev
 mysql_database: wdream
 mysql_user: dream
 mysql_pass: dreamuser123
 
 setup_user: dream
 
-search_project_path: "/opt/apps/wdream"
-console_project_path: "/opt/apps/crawlerapi"
-collecte_project_path: "/opt/apps/consoleadmin"
+search_project_path: "$HOME/apps/dream_search"
+console_project_path: "$HOME/apps/collecte_api"
+collecte_project_path: "$HOME/apps/dream_admin"
+
+search_app_name: "dream_search"
+console_app_name: "dream_admin"
+collecte_app_name: "collecte_api"

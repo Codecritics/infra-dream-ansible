@@ -1,0 +1,37 @@
+---
+- name: Install, configure, and start Docker
+  block:
+    - name: Update repositories cache and install docker packages
+      apt:
+        name: "{{ docker_packages }}"
+        update_cache: yes
+
+    - name: Import the repository’s GPG key using the following curl command
+      shell:
+        cmd: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+    - name: This command will change the working directory to somedir/
+      shell:
+        cmd: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+    - name: Install Mysql and Python3 MySQL module
+      apt:
+        name: [  "docker-ce", "docker-ce-cli", "containerd.io" ]
+        update_cache: yes
+      notify: restart docker
+
+    - name: Add existing user '{{ setup_user }}' to group docker
+      user:
+        name: '{{ setup_user }}'
+        groups: docker
+        append: yes
+
+    - name: install docker
+      pip:
+        name: "docker"
+
+    - name: install docker-compose
+      pip:
+        name: "docker-compose"
+  become: yes
+

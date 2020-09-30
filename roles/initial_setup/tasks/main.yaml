@@ -8,5 +8,34 @@
 
 - name: Create Folder for the apps
   file:
-    path: /opt/apps
+    path: "$HOME/apps"
     state: directory
+
+- name: add github ssh key
+  copy:
+    src: "~/.ssh/id_rsa"
+    dest: "~dream/.ssh/id_rsa"
+    owner: "dream"
+    group: "wheel"
+    mode: "0600"
+  tags: "search"
+
+- name: Copy SSH public key file
+  copy:
+    src: "~/.ssh/id_rsa.pub"
+    dest: "~dream/.ssh/id_rsa.pub"
+    mode: 0644
+#- name: Create Folder for the docker-php configuration
+#  file:
+#    path: "$HOME/apps/php"
+#    state: directory
+#
+#- name: Create Folder for the docker-nginx configuration
+#  file:
+#    path: "$HOME/apps/nginx"
+#    state: directory
+#
+#- name: Create Folder for the docker-redis configuration
+#  file:
+#    path: "$HOME/apps/redis"
+#    state: directory

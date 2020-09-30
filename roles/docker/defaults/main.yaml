@@ -1,0 +1,12 @@
+---
+
+docker_packages: [ "apt-transport-https", "ca-certificates", "curl", "gnupg-agent", "software-properties-common", "python3-pip", "virtualenv", "python3-setuptools"]
+
+search_http_port: 80
+search_http_host: "dev.wdream.fr"
+
+console_http_port: 8888
+console_http_host: "dev-collecte.api.wdream.fr"
+
+collecte_http_port: 8889
+collecte_http_host: "dev-console.wdream.fr"
