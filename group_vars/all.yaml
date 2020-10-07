@@ -6,9 +6,9 @@ mysql_pass: dreamuser123
 
 setup_user: dream
 
-search_project_path: "$HOME/apps/dream_search"
-console_project_path: "$HOME/apps/collecte_api"
-collecte_project_path: "$HOME/apps/dream_admin"
+search_project_path: "~dream/apps/dream_search"
+console_project_path: "~dream/apps/dream_admin"
+collecte_project_path: "~dream/apps/collecte_api"
 
 search_app_name: "dream_search"
 console_app_name: "dream_admin"

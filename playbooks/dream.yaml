@@ -5,7 +5,8 @@
     - { role: mysql, tags: database, user: dream, remote_user: dream }
     - { role: solr, tags: solr, user: dream, remote_user: dream }
     - { role: nginx, tags: nginx, user: dream, remote_user: dream }
-    - { role: docker, tags: docker, user: dream, remote_user: dream }
+    - { role: redis, tags: redis, user: dream, remote_user: dream }
+#    - { role: docker, tags: docker, user: dream, remote_user: dream }
 
   hosts:
     - new_dev
@@ -18,22 +19,10 @@
       - prachi3
       - subbhash
   tasks:
+    - name: Clone the Apps from git
+      include: apps/clone_apps.yaml
+      tags: apps
 
-    - name: Clone the search app
-      git:
-        repo: git@gitlab.com:franck.gryson/search-access-console.git
-        dest: "{{ search_project_path }}"
-        key_file: "~dream/.ssh/id_rsa"
-      tags: "git"
-
-    - name: Clone the CollecteApi app
-      git:
-        repo: https://Codecritics@bitbucket.org/Codecritics/crawlerapi.git
-        dest: "{{ collecte_project_path }}"
-      tags: "git"
-
-    - name: Clone the Admin Console app
-      git:
-        repo: https://bitbucket.org/prachiyadav/consoleadmin/src/master/
-        dest: "{{ console_project_path }}"
-      tags: "git"
+    - name: Clone the Apps from git
+      include: apps/configure.yaml
+      tags: apps

@@ -1,7 +1,7 @@
 server {
     listen {{ collecte_http_port }};
     server_name {{ collecte_http_host }};
-    root ~{{ setup_user }}/apps/{{collecte_app_name}}/public;
+    root /home/{{ setup_user }}/apps/{{collecte_app_name}}/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";

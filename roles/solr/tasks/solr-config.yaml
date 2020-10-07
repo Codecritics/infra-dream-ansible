@@ -3,12 +3,12 @@
 - name: Download Solr Version
   get_url:
     url: "https://archive.apache.org/dist/lucene/solr/{{ solr_version }}/solr-{{ solr_version }}.zip"
-    dest: /opt
+    dest: "/home/{{ setup_user }}"
 
 - name: Unzip Solr Zip
   unarchive:
     src: "~{{ setup_user }}/solr-{{ solr_version }}.zip"
-    dest: /opt
+    dest: "/home/{{ setup_user }}"
     remote_src: yes
 
 - name: Copy the jar configuration files

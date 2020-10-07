@@ -1,0 +1,8 @@
+[program:{{ collecte_app_name }}]
+process_name=%(program_name)s
+command=php /home/dream/apps/{{ collecte_app_name }}/artisan horizon
+autostart=true
+autorestart=true
+user=dream
+redirect_stderr=true
+stdout_logfile=/home/dream/apps/{{ collecte_app_name }}/storage/logs/laravel.log

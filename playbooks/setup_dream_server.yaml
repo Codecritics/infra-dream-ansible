@@ -4,6 +4,7 @@
   hosts:
     - new_dev
   user: root
+
   vars:
     users_root:
       - marius
@@ -11,26 +12,3 @@
       - prachi2
       - prachi3
       - subbhash
-  tasks:
-
-    - name: Clone the search app
-      git:
-        repo: git@gitlab.com:franck.gryson/search-access-console.git
-        dest: "{{ search_project_path }}"
-        key_file: "~dream/.ssh/id_rsa"
-      become: true
-      tags: "search"
-
-    - name: Clone the CollecteApi app
-      git:
-        repo: https://Codecritics@bitbucket.org/Codecritics/crawlerapi.git
-        dest: "{{ collecte_project_path }}"
-      become_user: dream
-      become: true
-
-    - name: Clone the Admin Console app
-      git:
-        repo: https://bitbucket.org/prachiyadav/consoleadmin/src/master/
-        dest: "{{ console_project_path }}"
-      become_user: dream
-      become: true

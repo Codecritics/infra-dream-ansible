@@ -27,4 +27,5 @@
         src: search.conf.j2
         dest: /etc/nginx/sites-enabled/search
       notify: restart nginx
+      become: true
   become: true

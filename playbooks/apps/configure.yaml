@@ -1,0 +1,110 @@
+---
+- name: Copy search env file
+  template:
+    src: dream_search_env.j2
+    dest: "{{ search_project_path }}/.env"
+  tags: "apps_env"
+
+- name: Copy admin env file
+  template:
+    src: dream_admin_env.j2
+    dest: "{{ console_project_path }}/.env"
+  tags: "apps_env"
+
+- name: Copy collecte_api env file
+  template:
+    src: collecte_api_env.j2
+    dest: "{{ collecte_project_path }}/.env"
+  tags: "apps_env"
+
+- name: Change owner storage files
+  file:
+    path: "{{ item }}/storage"
+    state: "directory"
+    recurse: "yes"
+    owner: "www-data"
+    group: "www-data"
+    mode: 0755
+  with_items:
+    - "{{ search_project_path }}"
+    - "{{ console_project_path }}"
+    - "{{ collecte_project_path }}"
+  become: true
+  tags: "laravel-setup"
+
+- name: Change owner bootstrap cache files
+  file:
+    path: "{{ item }}/bootstrap/cache/"
+    state: "directory"
+    recurse: "yes"
+    owner: "www-data"
+    group: "www-data"
+    mode: 0755
+  with_items:
+    - "{{ search_project_path }}"
+    - "{{ console_project_path }}"
+    - "{{ collecte_project_path }}"
+  become: true
+  tags: "laravel-setup"
+
+- name: Install dependencies
+  composer:
+    no_dev: false
+    command: install
+    working_dir: "{{ item }}"
+  with_items:
+    - "{{ search_project_path }}"
+    - "{{ console_project_path }}"
+    - "{{ collecte_project_path }}"
+  tags: "laravel-setup"
+  become: true
+  ignore_errors: true
+
+- name: Launch the php apps
+  shell:
+    cmd:  php artisan key:generate;
+    chdir: "{{ item }}"
+  with_items:
+    - "{{ search_project_path }}"
+    - "{{ console_project_path }}"
+    - "{{ collecte_project_path }}"
+  tags: "laravel-setup"
+  become: true
+
+- name: Clear cache
+  shell:
+    cmd: php artisan config:cache
+    chdir: "{{ item }}"
+  with_items:
+    - "{{ search_project_path }}"
+    - "{{ console_project_path }}"
+    - "{{ collecte_project_path }}"
+  become: true
+  ignore_errors: true
+  tags: "laravel-setup"
+
+#- name: Configure Supervisor
+#  template:
+#    src: supervisord.conf.j2
+#    dest: "/etc/supervisor/supervisord.conf"
+#  tags: "supervisor"
+
+#- name: Configure Supervisor
+#  template:
+#    src: collecte_api_supervisor.conf.j2
+#    dest: "/home/{{ setup_user }}/collecte_api.conf"
+#  tags: "supervisor"
+
+- name: Configure Supervisor
+  template:
+    src: collecte_api_supervisor.conf.j2
+    dest: "/etc/supervisor/conf.d/collecte_api.conf"
+  tags: "supervisor"
+  become: true
+
+- name: Restart Supervisor
+  supervisorctl:
+    name: "{{ collecte_app_name }}"
+    state: restarted
+  become: true
+  tags: "supervisor"

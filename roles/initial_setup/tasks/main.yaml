@@ -6,25 +6,44 @@
   include:
     iptables.yaml
 
+- name: Push SSH config
+  copy:
+    src: "{{ role_path }}/files/config/sshd_config"
+    dest: "/etc/ssh/sshd_config"
+  become: true
+  when: ansible_user == "root"
+
+- name: Restart SSH service
+  service:
+    name: ssh
+    state: restarted
+  become: true
+
 - name: Create Folder for the apps
   file:
     path: "$HOME/apps"
     state: directory
+  when:  ansible_facts['env']['USER'] == "{{ setup_user }}"
+  tags: ssh
 
-- name: add github ssh key
-  copy:
-    src: "~/.ssh/id_rsa"
-    dest: "~dream/.ssh/id_rsa"
-    owner: "dream"
-    group: "wheel"
-    mode: "0600"
-  tags: "search"
+- name: Configure ssh service
+  block:
+    - name: add github ssh key
+      copy:
+        src: "~/.ssh/id_rsa"
+        dest: "~dream/.ssh/id_rsa"
+        owner: "dream"
+        group: "wheel"
+        mode: "0600"
 
-- name: Copy SSH public key file
-  copy:
-    src: "~/.ssh/id_rsa.pub"
-    dest: "~dream/.ssh/id_rsa.pub"
-    mode: 0644
+    - name: Copy SSH public key file
+      copy:
+        src: "~/.ssh/id_rsa.pub"
+        dest: "~dream/.ssh/id_rsa.pub"
+        mode: 0644
+
+  when:  ansible_facts['env']['USER'] == "{{ setup_user }}"
+
 #- name: Create Folder for the docker-php configuration
 #  file:
 #    path: "$HOME/apps/php"
