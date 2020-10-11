@@ -1,0 +1,34 @@
+---
+- name: Nodejs Installation
+  block:
+    - name: Download installation nodejs
+      get_url:
+        url: https://deb.nodesource.com/setup_10.
+        dest: /tmp/nodesource_setup.sh
+
+    - name: Excecute the nodeJs script
+      shell:
+        cmd: bash nodesource_setup.sh
+        chdir: /tmp
+
+    - name: Install nodejs
+      apt:
+        name: nodejs
+        update_cache: yes
+
+    - name: Add the key
+      apt_key:
+        url: https://dl.yarnpkg.com/debian/pubkey.gpg
+        state: present
+
+    - name: Add Yarn to the package list
+      shell:
+        cmd: echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+        chdir: /tmp
+
+    - name: Install Yarn
+      apt:
+        name: yarn
+        update_cache: yes
+        install_recommends: no
+  become: true
