@@ -83,28 +83,34 @@
   ignore_errors: true
   tags: "laravel-setup"
 
-#- name: Configure Supervisor
-#  template:
-#    src: supervisord.conf.j2
-#    dest: "/etc/supervisor/supervisord.conf"
-#  tags: "supervisor"
+- name: Install Yarn dependencies
+  yarn:
+    path: "{{ item }}"
+  with_items:
+    - "{{ search_project_path }}"
+  become: yes
+  tags: "laravel-setup"
 
-#- name: Configure Supervisor
-#  template:
-#    src: collecte_api_supervisor.conf.j2
-#    dest: "/home/{{ setup_user }}/collecte_api.conf"
-#  tags: "supervisor"
+- name: Compile the NPM
+  shell:
+    cmd: yarn dev
+    chdir: "{{ item }}"
+  with_items:
+    - "{{ search_project_path }}"
+  become: true
+  ignore_errors: true
+  tags: "laravel-setup"
 
 - name: Configure Supervisor
   template:
     src: collecte_api_supervisor.conf.j2
     dest: "/etc/supervisor/conf.d/collecte_api.conf"
   tags: "supervisor"
-  become: true
+  become: yes
 
 - name: Restart Supervisor
   supervisorctl:
     name: "{{ collecte_app_name }}"
     state: restarted
-  become: true
+  become: yes
   tags: "supervisor"
