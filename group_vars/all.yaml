@@ -4,6 +4,8 @@ mysql_database: wdream
 mysql_user: dream
 mysql_pass: dreamuser123
 
+solr_port: "8983"
+
 setup_user: dream
 
 search_project_path: "~dream/apps/dream_search"

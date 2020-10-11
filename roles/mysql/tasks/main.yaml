@@ -31,6 +31,18 @@
   no_log: true
   become: yes
 
+- name: Copy Mysql configuration
+  copy:
+    src: "{{ role_path }}/files/mysqld.cnf"
+    dest: "/etc/mysql/my.cnf"
+  become: yes
+
+- name: Restart Mysql service
+  service:
+    name: mysql
+    state: restarted
+  become: yes
+
 # TODO DUMP the database
 #- name: allow access from this server the old one
 #  iptables: chain=INPUT source={{ ansible_default_ipv4["address"] }} jump=ACCEPT comment="Allow access from new {{ ansible_fqdn }}"

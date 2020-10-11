@@ -1,7 +1,7 @@
 <dataConfig>
     <dataSource type="JdbcDataSource"
                 driver="com.mysql.jdbc.Driver"
-                url="jdbc:mysql://{{ ansible_facts.eth0.ipv4.address }}/{{ mysql_database }}"
+                url="jdbc:mysql://{{ ansible_facts.default_ipv4.address }}/{{ mysql_database }}"
                 user="{{ mysql_user }}"
                 password="{{ mysql_pass }}"/>
     <document>

@@ -36,13 +36,13 @@
 -A INPUT -p tcp -m tcp --dport 8889 -j ACCEPT
 -A INPUT -m comment --comment "Access Client"
 -A INPUT -s 91.162.215.95/32 -p tcp -m multiport --dports 22,3306,8983,8080 -j ACCEPT
--A INPUT -s 98.195.70.177/32 -p tcp -m multiport --dports 22,3306,8983,8080 -j ACCEPT
+-A INPUT -s 98.195.70.177/32 -p tcp -m multiport --dports 22,3306,8983,8080 -m comment --comment "Addresse Ip de Marius Bureau" -j ACCEPT
 -A INPUT -s 82.223.21.118/32 -p tcp -m multiport --dports 22,3306,8983,8080 -j ACCEPT
--A INPUT -s 176.169.28.121/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
--A INPUT -s 98.195.70.61/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
+-A INPUT -s 176.169.28.121/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -m comment --comment "Addresse Ip de Prachi 1" -j ACCEPT
+-A INPUT -s 98.195.70.61/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -m comment --comment "Addresse Ip de Marius Maison"  -j ACCEPT
 -A INPUT -s 176.130.232.230/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
 -A INPUT -s 176.132.110.245/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
--A INPUT -s 192.168.1.12/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -j ACCEPT
+-A INPUT -s 192.168.1.12/32 -p tcp -m multiport --dports 22,3306,8983,8080,8888 -m comment --comment "Addresse Ip de Subhash" -j ACCEPT
 -A INPUT -m comment --comment "Dutiko : Admin & Monitoring"
 -A INPUT -s 176.31.89.162/32 -p icmp -m icmp --icmp-type 8 -j ACCEPT
 -A INPUT -s 62.210.45.142/32 -p icmp -m icmp --icmp-type 8 -j ACCEPT
