@@ -2,21 +2,21 @@ version: '3'
 services:
 
   #PHP Service
-  {{ search_app_name }}:
+  apps:
     build:
       context: .
       dockerfile: Dockerfile
     image:  wdream/dream-php:latest
-    container_name: {{ search_app_name }}
+    container_name: apps
     restart: unless-stopped
     tty: true
     environment:
-      SERVICE_NAME: {{ search_app_name }}
+      SERVICE_NAME: apps
       SERVICE_TAGS: dev
     working_dir: /var/www
     volumes:
-      - ./{{ search_app_name }}:/var/www
-#      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
 

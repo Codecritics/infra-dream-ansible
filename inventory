@@ -1,5 +1,5 @@
 current_dev ansible_host=dev.wdream.fr
-new_dev ansible_host=212.227.200.192
+new_dev ansible_host=138.68.91.106
 
 [current-prod]
 server_host_or_IP

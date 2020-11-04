@@ -1,0 +1,30 @@
+- roles:
+    - { role: initial_setup, tags: setup }
+    - { role: docker, tags: docker, user: dream, remote_user: dream }
+
+  hosts:
+    - new_dev
+  user: dream
+  vars:
+    users_root:
+      - marius
+      - prachi
+      - prachi2
+      - prachi3
+      - subbhash
+  tasks:
+    - name: Create Folder for the docker-nginx configuration
+      file:
+        path: "$HOME/apps/nginx"
+        state: directory
+      tags: apps
+
+    - name: Create Folder for the docker-redis configuration
+      file:
+        path: "$HOME/apps/redis"
+        state: directory
+      tags: apps
+
+    - name: Clone the Apps from git
+      include: apps_docker/configure_docker_apps.yaml
+      tags: apps

@@ -43,18 +43,3 @@
         mode: 0644
 
   when:  ansible_facts['env']['USER'] == "{{ setup_user }}"
-
-#- name: Create Folder for the docker-php configuration
-#  file:
-#    path: "$HOME/apps/php"
-#    state: directory
-#
-#- name: Create Folder for the docker-nginx configuration
-#  file:
-#    path: "$HOME/apps/nginx"
-#    state: directory
-#
-#- name: Create Folder for the docker-redis configuration
-#  file:
-#    path: "$HOME/apps/redis"
-#    state: directory

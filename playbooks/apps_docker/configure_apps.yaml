@@ -3,20 +3,23 @@
   template:
     src: dream_search_env.j2
     dest: "{{ search_project_path }}/.env"
+  tags: "apps_env"
 
 - name: Copy admin env file
   template:
     src: dream_admin_env.j2
     dest: "{{ console_project_path }}/.env"
+  tags: "apps_env"
 
 - name: Copy collecte_api env file
   template:
     src: collecte_api_env.j2
     dest: "{{ collecte_project_path }}/.env"
+  tags: "apps_env"
 
-- name: Launch the php apps
-  shell:
-    cmd: docker-compose exec dream_search composer install;docker-compose exec dream_search php artisan key:generate;
-    chdir: "{{ item }}"
-  with_items:
-    - "{{ search_project_path }}"
+#- name: Launch the php apps
+#  shell:
+#    cmd: docker-compose exec dream_search composer install;docker-compose exec dream_search php artisan key:generate;
+#    chdir: "{{ item }}"
+#  with_items:
+#    - "{{ search_project_path }}"

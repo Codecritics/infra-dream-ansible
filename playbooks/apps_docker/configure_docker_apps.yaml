@@ -26,14 +26,16 @@
       template:
         src: apps.conf.j2
         dest: "~{{ setup_user }}/apps/nginx/default.conf"
-      become: true
+      tags: container
 
     - name: Launch the containers
       docker_login:
         username: codecritics
         password: dockercocoluluk93+
+      tags: container
 
     - name: Pull the images
       docker_compose:
         project_src: "~{{ setup_user }}/apps"
         state: present
+      tags: container
