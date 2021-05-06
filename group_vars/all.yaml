@@ -1,8 +1,8 @@
 ---
 env: dev
-mysql_database: wdream
-mysql_user: dream
-mysql_pass: dreamuser123
+mysql_database: dream
+mysql_user: dream_user
+mysql_pass: dream_user@94270
 
 solr_port: "8983"
 

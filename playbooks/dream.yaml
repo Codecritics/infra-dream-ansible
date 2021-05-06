@@ -3,8 +3,8 @@
     - { role: php, tags: php, user: dream, remote_user: dream }
     - { role: composer, tags: php, user: dream, remote_user: dream }
     - { role: redis, tags: redis, user: dream, remote_user: dream }
-    - { role: mysql, tags: database, user: dream, remote_user: dream }
-    - { role: solr, tags: solr, user: dream, remote_user: dream }
+  #  - { role: mysql, tags: database, user: dream, remote_user: dream }
+  #  - { role: solr, tags: solr, user: dream, remote_user: dream }
     - { role: nginx, tags: nginx, user: dream, remote_user: dream }
 
 #    - { role: docker, tags: docker, user: dream, remote_user: dream }

@@ -5,6 +5,7 @@
 - name: Configure Iptables
   include:
     iptables.yaml
+  become: true
 
 - name: Push SSH config
   copy:
